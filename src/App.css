@@ -1,0 +1,65 @@
+.App {
+  text-align: left;
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  /* animation: ping 2s 1s linear infinite; */
+  position: absolute;
+  background-color: green;
+  width: 15px;
+}
+
+.chat-bubble {
+  width: 120px;
+  max-width: 120px;
+}
+
+.typing {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 100px;
+  width: 100px;
+}
+
+.typing .dot {
+  animation: mercuryTypingAnimation 1.8s infinite ease-in-out;
+  vertical-align: middle;
+}
+
+.typing .dot:nth-child(1) {
+  animation-delay: 200ms;
+}
+.typing .dot:nth-child(2) {
+  animation-delay: 300ms;
+}
+.typing .dot:nth-child(3) {
+  animation-delay: 400ms;
+}
+.typing .dot:last-child {
+  margin-right: 0;
+}
+
+@keyframes mercuryTypingAnimation {
+  0% {
+    transform: translateY(0px);
+    background-color: rgba(107, 114, 128, 0.7);
+  }
+  28% {
+    transform: translateY(-7px);
+    background-color: rgba(107, 114, 128, 0.4);
+  }
+  44% {
+    transform: translateY(0px);
+    background-color: rgba(107, 114, 128, 0.2);
+  }
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
